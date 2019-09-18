@@ -62,6 +62,21 @@ func functionWithMultiReturnValues(aName string, aCity string, anAge int) (strin
 	return "Villain", errors.New("Thanos is not an Avenger")
 }
 
+// function with named return values
+func functionWithnamedReturnValues(aName string, aCity string, anAge int) (returnVal1 string, returnVal2 error) {
+
+	// The returnvalues are initialised+declared for us, by the function itself
+	// since they are part of the function's definition.
+	fmt.Println("returnVal1 datatype is:", reflect.TypeOf(returnVal1)) // prints: string //which happens to be empty string
+	fmt.Println("returnVal1 datatype is:", reflect.TypeOf(returnVal2)) // error defaults to <nil>
+
+	fmt.Println("'name' is set to:", aName)
+	fmt.Println("'city' is set to:", aCity)
+	fmt.Println("'age' is set to:", anAge)
+
+	return "Villain", errors.New("Thanos is not an Avenger")
+}
+
 func main() {
 
 	// Here  we are calling the function into action
@@ -91,4 +106,8 @@ func main() {
 	*/
 	result3, _ := functionWithMultiReturnValues("Ultron", "Earth", 1)
 	fmt.Println(result3)
+
+	Val1, Val2 := functionWithnamedReturnValues("Ultron", "Earth", 2)
+	fmt.Println(Val1, Val2)
+
 }
