@@ -15,6 +15,8 @@ $ gsg_structs
 
 ## Nested functions
 
+There is no such thing as nested fuctions, the closest thing to it is [function literals](https://golang.org/ref/spec#Function_literals). 
+
 
 Normally you shouldn't need to nest functions, but you can nest function using a different syntax, for example lets say you have:
 
@@ -64,3 +66,5 @@ func main() {
 // the above outputs:
 // 2
 ```
+
+An example of where this is used is [recursively get all filepaths from a directory tree](https://www.google.com/search?q=golange+recursively+get+all+files+in+a+directory&oq=golange+recursively+get+all+files+in+a+directory&aqs=chrome..69i57j0.23531j0j7&sourceid=chrome&ie=UTF-8)
