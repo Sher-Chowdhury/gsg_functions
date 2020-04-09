@@ -59,7 +59,7 @@ func functionWithMultiReturnValues(aName string, aCity string, anAge int) (strin
 	fmt.Println("'city' is set to:", aCity)
 	fmt.Println("'age' is set to:", anAge)
 
-	return "Villain", errors.New("Thanos is not an Avenger")
+	return "Super Villain", errors.New("Thanos is not an Avenger")
 }
 
 // function with named return values
@@ -74,7 +74,11 @@ func functionWithnamedReturnValues(aName string, aCity string, anAge int) (retur
 	fmt.Println("'city' is set to:", aCity)
 	fmt.Println("'age' is set to:", anAge)
 
-	return "Villain", errors.New("Thanos is not an Avenger")
+	returnVal1 = "Villain"
+	returnVal2 = errors.New("Thanos is not an Avenger")
+
+	// Notice we don't have to specify what we are exporting.
+	return
 }
 
 func main() {
@@ -94,9 +98,11 @@ func main() {
 
 	result2, errMessage := functionWithMultiReturnValues("Thanos", "Titan", 150)
 
-	fmt.Println(result2)
-	fmt.Println(errMessage)
-	fmt.Println(reflect.TypeOf(errMessage))
+	fmt.Println(result2) // Super Villain
+	fmt.Println("xxxx")
+	fmt.Println(errMessage) // Thanos is not an Avenger
+	fmt.Println("xxxx")
+	fmt.Println(reflect.TypeOf(errMessage)) // *errors.errorString
 
 	/*
 		Here, the underscore is used as a way of saying we don't care about this
@@ -108,6 +114,26 @@ func main() {
 	fmt.Println(result3)
 
 	Val1, Val2 := functionWithnamedReturnValues("Ultron", "Earth", 2)
-	fmt.Println(Val1, Val2)
+	fmt.Println(Val1, Val2) // Villain Thanos is not an Avenger
+
+	// Here's an "anonymous function" aka "function literal"
+	// Anonymous functions are functions without a name.
+	// they are the only typle of functions that can be nested inside other functions.
+	func(message string) {
+		fmt.Println(message)
+	}("Hi I'm an anonymous function") // Hi I'm an anonymous function
+
+	// notice how we injected arguments with the ending round brackets. That's how it's done since you
+	// can't call this function.
+
+	// The above anonymous function only lets you run the anonymous function once due to it's syntax
+	// here's a way to call an anonymous function lots of times.
+	// you are effectively creating a variable from an anonymous function
+	anonyvar := func(message string) {
+		fmt.Println(message)
+	}
+	fmt.Println(reflect.TypeOf(anonyvar)) // func(string)
+	anonyvar("hello")                     // hello
+	anonyvar("anonymous world")           // anonymous world
 
 }
