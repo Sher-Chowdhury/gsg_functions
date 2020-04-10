@@ -21,6 +21,7 @@ func main() {
 	// The above anonymous function only lets you run the anonymous function once due to it's syntax
 	// However you can run it multiple times by storing the function in a variable.
 	// Here we are effectively creating a variable from an anonymous function
+	// we omitted the ending () becuase that can now be injected in later.
 	anonyvar := func(message string) {
 		fmt.Println(message)
 	}
