@@ -6,12 +6,11 @@ import (
 	"reflect"
 )
 
-// Next we create 3 anonymouse functions, all of which
-// having parameter signature to match the
-// someNumber's data type signature
-var ()
-
 func calculator(action string) func(a, b int) int {
+	// here we create 3 anonymouse functions, all of which
+	// having parameter signature to match the
+	// someNumber's data type signature
+
 	addVar := func(num1, num2 int) int {
 		return num1 + num2
 	}
@@ -38,7 +37,9 @@ func calculator(action string) func(a, b int) int {
 
 func main() {
 
+	// This approach lets you choose the content of your function body
 	calcOption := calculator("multiplication")
+
 	// This calcOption variable can now be used
 	// to only perform multiplications.
 	fmt.Println(reflect.TypeOf(calcOption)) // func(int, int) int
