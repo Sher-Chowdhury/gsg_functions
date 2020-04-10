@@ -137,3 +137,7 @@ func main() {
 	anonyvar("anonymous world")           // anonymous world
 
 }
+
+
+// Also see:
+// https://golangbot.com/first-class-functions/
