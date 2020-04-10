@@ -28,4 +28,6 @@ func main() {
 	fmt.Println(a("Gopher")) // Hello World Gopher
 	fmt.Println(a("!"))      // Hello World Gopher !
 
+	// basically our function has become a stateful function.
+
 }
