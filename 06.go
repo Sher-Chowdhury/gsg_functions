@@ -10,13 +10,18 @@ func main() {
 
 	// Here's an "anonymous function" aka "function literal"
 	// Anonymous functions are functions without a name.
-	// they are the only type of functions that can be nested inside other functions.
+	// they are the only type of functions that can be nested inside
+	// other functions.
+	func() {
+		fmt.Println("hello world first class function") // hello world first class function
+	}()
+
+	// Here's another one, which this time accepts an input parmater, "message".
+	// notice how we injected arguments with the ending round brackets. That's
+	// how it's done since you can't call this function.
 	func(message string) {
 		fmt.Println(message)
 	}("Hi I'm an anonymous function") // Hi I'm an anonymous function
-
-	// notice how we injected arguments with the ending round brackets. That's
-	// how it's done since you can't call this function.
 
 	// The above anonymous function only lets you run the anonymous function once due to it's syntax
 	// However you can run it multiple times by storing the function in a variable.
