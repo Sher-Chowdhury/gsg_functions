@@ -15,6 +15,8 @@ func main() {
 	func() {
 		fmt.Println("hello world first class function") // hello world first class function
 	}()
+	
+	// Anonymous function is the bash equivalent of using back ticks, e.g. `echo hello` or $(echo hello)
 
 	// Here's another one, which this time accepts an input parmater, "message".
 	// notice how we injected arguments with the ending round brackets. That's
