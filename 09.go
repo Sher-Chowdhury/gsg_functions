@@ -16,6 +16,7 @@ func main() {
 
 	// Here we're creating variable called var1, which is of the 'add' datatype.
 	// And we've stored a function inside that variable.
+	// The RHS is actually a anonymous function, which accept 2 input parameters and one output parameter. 
 	var var1 add = func(a int, b int) int {
 		return a + b
 	}
